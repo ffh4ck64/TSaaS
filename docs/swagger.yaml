@@ -1,0 +1,11 @@
+basePath: /
+host: localhost:8080
+info:
+  contact:
+    email: ctipax@gmail.com
+    name: ffh4ck64
+  description: The TSaaS is Typesetting as a Service.
+  title: TSaaS API
+  version: "1.0"
+paths: {}
+swagger: "2.0"

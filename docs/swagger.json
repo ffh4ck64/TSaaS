@@ -1,0 +1,15 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "The TSaaS is Typesetting as a Service.",
+        "title": "TSaaS API",
+        "contact": {
+            "name": "ffh4ck64",
+            "email": "ctipax@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {}
+}
