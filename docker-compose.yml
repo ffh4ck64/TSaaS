@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  tsaas:
+    image: tsaas:latest
+    container_name: tsaas
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "31337:31337"
+    volumes:
+      - ./tsaas_data:/data
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+
+volumes:
+  tsaas_data:
+    driver: local

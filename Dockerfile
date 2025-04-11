@@ -1,4 +1,4 @@
-FROM golang:1.24.1
+FROM golang:1.24.2-alpine3.21
 
 WORKDIR /app
 
@@ -8,9 +8,13 @@ COPY go.mod go.sum ./
 RUN go mod download
 RUN go install github.com/swaggo/swag/cmd/swag@latest
 
-COPY main.go ./
+RUN export PATH=$(go env GOPATH)/bin:$PATH
+
+COPY main.go parser.go ./
+
+RUN swag init
+
 RUN go build -o main
 
 EXPOSE 8080
-
-CMD ["sh", "./run.sh"]
+ENTRYPOINT [ "./main" ]
